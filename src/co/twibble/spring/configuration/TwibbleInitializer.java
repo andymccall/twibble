@@ -15,7 +15,7 @@ import org.springframework.web.servlet.DispatcherServlet;
  * @author Andy McCall
  *
  */
-public class TwitterInitializer implements WebApplicationInitializer {
+public class TwibbleInitializer implements WebApplicationInitializer {
  
     public void onStartup(ServletContext container) throws ServletException {
  

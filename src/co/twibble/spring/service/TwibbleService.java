@@ -15,5 +15,7 @@ public interface TwibbleService {
 
     public void addTwibble(Twibble t);
     public List<Twibble> listTwibbles();
-	
+    public void updateTwibble(Twibble t);
+    public Twibble getTwibbleById(int id);
+
 }

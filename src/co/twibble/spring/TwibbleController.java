@@ -43,6 +43,6 @@ public class TwibbleController {
  
         List<Twibble> twibbles = service.listTwibbles();
         model.addAttribute("twibbles", twibbles);
-        return "alltwibbles";
+        return "twibbles";
     }
 }

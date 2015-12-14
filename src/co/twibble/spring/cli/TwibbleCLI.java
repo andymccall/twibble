@@ -48,8 +48,24 @@ public class TwibbleCLI {
 		 * Get all Twibbles list from database
 		 */
 		List<Twibble> twibbleList = service.listTwibbles();
-		for (Twibble twibble : twibbleList) {
-			System.out.println(twibble);
+		for (Twibble t1 : twibbleList) {
+			System.out.println(t1);
+		}
+		
+		/*
+         * Update a Twibble
+         */
+ 
+		Twibble twibble = service.getTwibbleById(1);
+		twibble.setTwibble("This is an updated twibble!");
+        service.updateTwibble(twibble);
+ 
+        /*
+		 * Get all Twibbles list from database
+		 */
+		List<Twibble> twibbleList2 = service.listTwibbles();
+		for (Twibble t2 : twibbleList2) {
+			System.out.println(t2);
 		}
 
 		context.close();

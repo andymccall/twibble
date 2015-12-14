@@ -39,5 +39,18 @@ public class TwibbleServiceImpl implements TwibbleService {
         return twibbleDAO.listTwibbles();
     }
 	
+    @Override
+    @Transactional
+    public void updateTwibble(Twibble t) {
+        twibbleDAO.updateTwibble(t);
+    }
+    
+    @Override
+    @Transactional
+    public Twibble getTwibbleById(int id) {
+    	return twibbleDAO.getTwibbleByID(id);
+    }
+
+    
 }
 
