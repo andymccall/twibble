@@ -1,7 +1,7 @@
 /**
  * 
  */
-package co.twibble.spring;
+package co.twibble.spring.cli;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import co.twibble.spring.model.Twibble;
 import co.twibble.spring.service.TwibbleService;
 
 /**
- * @author Andy
+ * @author Andy McCall
  *
  */
-public class TwibbleMain {
+public class TwibbleCLI {
 
 	/**
 	 * @param args
