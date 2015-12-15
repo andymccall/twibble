@@ -6,7 +6,6 @@ package co.twibble.spring.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -33,9 +32,9 @@ public class TwibbleDAOImpl extends AbstractDAO implements TwibbleDAO {
 		getSession().update(twibble);
 	}
 	
-    public Twibble getTwibbleByID(int id) {
+    public Twibble getTwibbleByID(int twibble_id) {
         Criteria criteria = getSession().createCriteria(Twibble.class);
-        criteria.add(Restrictions.eq("id",id));
+        criteria.add(Restrictions.eq("twibble_id",twibble_id));
         return (Twibble) criteria.uniqueResult();
     }
 

@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
  
 /**
@@ -17,36 +20,44 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="TWIBBLE")
+@Table(name="TWIBBLES")
+@SecondaryTable(name="USERS")
 public class Twibble {
 
 	@Id
-    @Column(name="ID")
+    @Column(name="TWIBBLE_ID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
-	@Column(name = "TWIBBLE", nullable = false)
-    private String twibble; 
+	@Column(name = "TEXT", nullable = false)
+    private String text;
 
+	@Column(table = "USERS", name = "USERNAME", nullable = false)
+	private String username;
+	
     public int getId() {
-        return id;
+        return this.id;
     }
  
-    public void setId(int id) {
-        this.id = id;
+    public void setTwibbleId(int twibble_id) {
+        this.id = twibble_id;
     }
  
-    public String getTwibble() {
-        return twibble;
+    public String getText() {
+        return this.text;
     }
  
-    public void setTwibble(String twibble) {
-        this.twibble = twibble;
+    public void setText(String text) {
+        text = this.text;
     }  
-     
-    @Override
-    public String toString(){
-        return "id="+id+", twibble="+twibble;
-    }
+
+   public String getUsername() {
+      return this.username;
+   }
+    
+   @Override
+   public String toString(){
+       return "twibble_id="+id+", text="+text+", username="+username;
+   }
 	
 }

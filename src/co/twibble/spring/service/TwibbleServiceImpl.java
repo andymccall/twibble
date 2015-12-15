@@ -29,8 +29,8 @@ public class TwibbleServiceImpl implements TwibbleService {
  
     @Override
     @Transactional
-    public void addTwibble(Twibble t) {
-        twibbleDAO.addTwibble(t);
+    public void addTwibble(Twibble twibble) {
+        twibbleDAO.addTwibble(twibble);
     }
  
     @Override
@@ -41,14 +41,14 @@ public class TwibbleServiceImpl implements TwibbleService {
 	
     @Override
     @Transactional
-    public void updateTwibble(Twibble t) {
-        twibbleDAO.updateTwibble(t);
+    public void updateTwibble(Twibble twibble) {
+        twibbleDAO.updateTwibble(twibble);
     }
     
     @Override
     @Transactional
-    public Twibble getTwibbleById(int id) {
-    	return twibbleDAO.getTwibbleByID(id);
+    public Twibble getTwibbleById(int twibble_id) {
+    	return twibbleDAO.getTwibbleByID(twibble_id);
     }
 
     

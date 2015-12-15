@@ -13,9 +13,9 @@ import co.twibble.spring.model.Twibble;
  */
 public interface TwibbleDAO {
 	
-    public void addTwibble(Twibble t);
+    public void addTwibble(Twibble twibble);
     public List<Twibble> listTwibbles();
-    public void updateTwibble(Twibble t);
-    public Twibble getTwibbleByID(int id);
+    public void updateTwibble(Twibble twibble);
+    public Twibble getTwibbleByID(int twibble_id);
 
 }

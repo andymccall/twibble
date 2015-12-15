@@ -13,9 +13,9 @@ import co.twibble.spring.model.Twibble;
  */
 public interface TwibbleService {
 
-    public void addTwibble(Twibble t);
+    public void addTwibble(Twibble twibble);
     public List<Twibble> listTwibbles();
-    public void updateTwibble(Twibble t);
-    public Twibble getTwibbleById(int id);
+    public void updateTwibble(Twibble twibble);
+    public Twibble getTwibbleById(int twibble_id);
 
 }

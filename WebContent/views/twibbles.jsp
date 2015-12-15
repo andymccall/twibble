@@ -18,10 +18,16 @@
 <body>
     <h2>List of Twibbles</h2>  
     <table>
+       <tr>
+            <th>Twibble ID</th>
+            <th>Twibble</th>
+            <th>Username</th>
+        </tr>
         <c:forEach items="${twibbles}" var="twibble">
             <tr>
             <td>${twibble.id}</td>
-            <td>${twibble.twibble}</td>
+            <td>${twibble.text}</td>
+            <td>${twibble.username}</td>
             </tr>
         </c:forEach>
     </table>
