@@ -18,26 +18,26 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Users")
-public class User {
+public class TwibbleUser {
 
 	@Id
     @Column(name="USER_ID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int user_id;
+    private int id;
 
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
 	
-	public int getUserId() {
-        return user_id;
+	public int getId() {
+        return id;
     }
  
-    public void setUserId(int user_id) {
-        this.user_id = user_id;
+    public void setId(int id) {
+        this.id = id;
     }
 	
     public String getUsername() {
-        return username;
+        return this.username;
     }
     
     public void setUsername(String username) {
@@ -46,7 +46,7 @@ public class User {
     
     @Override
     public String toString(){
-        return "user_id="+user_id+", username="+username;
+        return "user_id="+id+", username="+username;
     }
 	
 }

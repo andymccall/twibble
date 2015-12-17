@@ -1,7 +1,7 @@
 /**
  * 
  */
-package co.twibble.spring.dao;
+package co.twibble.spring.service;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import co.twibble.spring.model.TwibbleUser;
  * @author Andy McCall
  *
  */
-public interface UserDAO {
-	
-    public void addUser(TwibbleUser user);
+public interface TwibbleUserService {
+   
+    public void addUser(TwibbleUser twibbleUser);
     public List<TwibbleUser> listUsers();
-    public void updateUser(TwibbleUser user);
+    public void updateUser(TwibbleUser twibbleUser);
     public TwibbleUser getUserByID(int user_id);
 
 }

@@ -8,11 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SecondaryTable;
 import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
  
+import co.twibble.spring.model.TwibbleUser;
+
 /**
  * Entity bean with JPA annotations
  * Hibernate provides JPA implementation
@@ -21,7 +25,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="TWIBBLES")
-@SecondaryTable(name="USERS")
 public class Twibble {
 
 	@Id
@@ -32,14 +35,15 @@ public class Twibble {
 	@Column(name = "TEXT", nullable = false)
     private String text;
 
-	@Column(table = "USERS", name = "USERNAME", nullable = false)
-	private String username;
+    @ManyToOne
+    @JoinColumn(name ="USER_ID")
+	private TwibbleUser user;
 	
     public int getId() {
         return this.id;
     }
  
-    public void setTwibbleId(int twibble_id) {
+    public void setId(int twibble_id) {
         this.id = twibble_id;
     }
  
@@ -52,12 +56,12 @@ public class Twibble {
     }  
 
    public String getUsername() {
-      return this.username;
+      return this.user.getUsername();
    }
     
    @Override
    public String toString(){
-       return "twibble_id="+id+", text="+text+", username="+username;
+       return "twibble_id= "+ getId() + ", text= " + getText() + ", username= " + getUsername();
    }
 	
 }

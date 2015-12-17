@@ -9,7 +9,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import co.twibble.spring.model.User;
+import co.twibble.spring.model.TwibbleUser;
 
 /**
  * @author Andy McCall
@@ -18,24 +18,24 @@ import co.twibble.spring.model.User;
 @Repository("userDao")
 public class UserDAOImpl extends AbstractDAO implements UserDAO {
  
-	public void addUser(User user) {
+	public void addUser(TwibbleUser user) {
 		persist(user);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<User> listUsers() {
-		Criteria criteria = getSession().createCriteria(User.class);
-		return (List<User>) criteria.list();
+	public List<TwibbleUser> listUsers() {
+		Criteria criteria = getSession().createCriteria(TwibbleUser.class);
+		return (List<TwibbleUser>) criteria.list();
 	}
 	
-	public void updateUser(User user) {
+	public void updateUser(TwibbleUser user) {
 		getSession().update(user);
 	}
 	
-    public User getUserByID(int user_id) {
-        Criteria criteria = getSession().createCriteria(User.class);
+    public TwibbleUser getUserByID(int user_id) {
+        Criteria criteria = getSession().createCriteria(TwibbleUser.class);
         criteria.add(Restrictions.eq("user_id",user_id));
-        return (User) criteria.uniqueResult();
+        return (TwibbleUser) criteria.uniqueResult();
     }
 
 }

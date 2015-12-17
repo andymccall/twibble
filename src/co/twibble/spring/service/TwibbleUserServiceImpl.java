@@ -10,15 +10,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.twibble.spring.dao.UserDAO;
-import co.twibble.spring.model.User;
+import co.twibble.spring.model.TwibbleUser;
 
 /**
  * @author Andy McCall
  *
  */
-@Service("userService")
+@Service("twibbleUserService")
 @Transactional
-public class UserServiceImpl implements UserService {
+public class TwibbleUserServiceImpl implements TwibbleUserService {
 
 	@Autowired
 	private UserDAO userDAO;
@@ -29,25 +29,25 @@ public class UserServiceImpl implements UserService {
 	 
 	    @Override
 	    @Transactional
-	    public void addUser(User user) {
-	    	userDAO.addUser(user);
+	    public void addUser(TwibbleUser twibbleUser) {
+	    	userDAO.addUser(twibbleUser);
 	    }
 	 
 	    @Override
 	    @Transactional
-	    public List<User> listUsers() {
+	    public List<TwibbleUser> listUsers() {
 	        return userDAO.listUsers();
 	    }
 		
 	    @Override
 	    @Transactional
-	    public void updateUser(User user) {
-	    	userDAO.updateUser(user);
+	    public void updateUser(TwibbleUser twibbleUser) {
+	    	userDAO.updateUser(twibbleUser);
 	    }
 	    
 	    @Override
 	    @Transactional
-		public User getUserByID(int user_id) {
+		public TwibbleUser getUserByID(int user_id) {
 	    	return userDAO.getUserByID(user_id);
 		}
 
