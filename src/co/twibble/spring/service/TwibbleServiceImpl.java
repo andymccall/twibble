@@ -47,8 +47,8 @@ public class TwibbleServiceImpl implements TwibbleService {
     
     @Override
     @Transactional
-    public Twibble getTwibbleById(int twibble_id) {
-    	return twibbleDAO.getTwibbleByID(twibble_id);
+    public Twibble getTwibbleById(int twibbleid) {
+    	return twibbleDAO.getTwibbleByID(twibbleid);
     }
 
     

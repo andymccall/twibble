@@ -10,9 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.SecondaryTable;
-import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
  
 import co.twibble.spring.model.TwibbleUser;
@@ -28,23 +25,23 @@ import co.twibble.spring.model.TwibbleUser;
 public class Twibble {
 
 	@Id
-    @Column(name="TWIBBLE_ID")
+    @Column(name="TWIBBLEID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private int twibbleId;
     
 	@Column(name = "TEXT", nullable = false)
     private String text;
 
     @ManyToOne
-    @JoinColumn(name ="USER_ID")
+    @JoinColumn(name ="USERID")
 	private TwibbleUser user;
 	
-    public int getId() {
-        return this.id;
+    public int getTwibbleId() {
+        return this.twibbleId;
     }
  
-    public void setId(int twibble_id) {
-        this.id = twibble_id;
+    public void setId(int twibbleid) {
+        this.twibbleId = twibbleid;
     }
  
     public String getText() {
@@ -58,10 +55,14 @@ public class Twibble {
    public String getUsername() {
       return this.user.getUsername();
    }
+   
+   public String getFullName() {
+	   return this.user.getFullName();
+   }
     
    @Override
    public String toString(){
-       return "twibble_id= "+ getId() + ", text= " + getText() + ", username= " + getUsername();
+       return "twibbleId= "+ getTwibbleId() + ", text= " + getText() + ", username= " + getUsername();
    }
 	
 }

@@ -32,9 +32,9 @@ public class TwibbleDAOImpl extends AbstractDAO implements TwibbleDAO {
 		getSession().update(twibble);
 	}
 	
-    public Twibble getTwibbleByID(int twibble_id) {
+    public Twibble getTwibbleByID(int twibbleId) {
         Criteria criteria = getSession().createCriteria(Twibble.class);
-        criteria.add(Restrictions.eq("twibble_id",twibble_id));
+        criteria.add(Restrictions.eq("twibbleId",twibbleId));
         return (Twibble) criteria.uniqueResult();
     }
 

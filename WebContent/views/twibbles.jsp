@@ -3,34 +3,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+
+	<jsp:include page="/views/fragments/header.jsp" />
+
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Twibbles</title>
- 
-    <style>
-        tr:first-child{
-            font-weight: bold;
-            background-color: #C6C9C4;
-        }
-    </style>
+    <title>Twibble</title>
  
 </head>
  
 <body>
     <h2>List of Twibbles</h2>  
-    <table>
-       <tr>
-            <th>Twibble ID</th>
-            <th>Twibble</th>
-            <th>Username</th>
-        </tr>
+ 
+ <div class="row">
+  <div class="col-sm-4"></div>
+  
+  <div class="col-sm-4">
+   <table>
         <c:forEach items="${twibbles}" var="twibble">
+        <div class="container">
             <tr>
-            <td>${twibble.id}</td>
-            <td>${twibble.text}</td>
-            <td>${twibble.username}</td>
+            	<td><b>${twibble.fullName}</b>, @${twibble.username}</td>
             </tr>
+            <tr>
+            	<td>${twibble.text}</td>
+            </tr>
+        </div>
+        <br/>
         </c:forEach>
     </table>
-    <br/>
+  
+  </div>
+  
+  <div class="col-sm-4"></div>
+</div>
+ 
+    <jsp:include page="/views/fragments/footer.jsp" />
+    
 </body>
 </html>

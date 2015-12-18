@@ -21,19 +21,28 @@ import javax.persistence.Table;
 public class TwibbleUser {
 
 	@Id
-    @Column(name="USER_ID")
+    @Column(name="USERID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private int userId;
 
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
 	
-	public int getId() {
-        return id;
+	@Column(name = "FIRSTNAME", nullable = false)
+	private String firstName;
+	
+	@Column(name = "LASTNAME", nullable = false)
+	private String lastName;
+
+	@Column(name = "EMAILADDRESS", nullable = false)
+	private String emailAddress;
+	
+	public int getUserId() {
+        return userId;
     }
  
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 	
     public String getUsername() {
@@ -41,12 +50,40 @@ public class TwibbleUser {
     }
     
     public void setUsername(String username) {
-         this.username = username ;
+        this.username = username ;
     }
     
-    @Override
+    public void setFirstName(String firstname) {
+         this.firstName = firstname ;
+    }
+    
+    public String getFirstName() {
+        return this.firstName;
+    }
+   
+    public void setLastName(String lastname) {
+        this.lastName = lastname ;
+   }
+   
+   public String getLastName() {
+       return this.lastName;
+   }
+    
+   public String getFullName() {   
+	   return this.firstName + " " + this.lastName;
+   }
+   
+    public String getEmailAddress() {
+    	return emailAddress;
+    }
+
+    public void setEmailAddress(String emailaddress) {
+    	this.emailAddress = emailaddress;
+    }
+
+	@Override
     public String toString(){
-        return "user_id="+id+", username="+username;
+        return "userId=" + userId + "," + "username=" + username + "," + "firstName:" + firstName + "," + "lastName:" + lastName;
     }
 	
 }

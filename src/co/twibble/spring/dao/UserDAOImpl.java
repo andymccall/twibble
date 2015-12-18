@@ -32,9 +32,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
 		getSession().update(user);
 	}
 	
-    public TwibbleUser getUserByID(int user_id) {
+    public TwibbleUser getUserByID(int userId) {
         Criteria criteria = getSession().createCriteria(TwibbleUser.class);
-        criteria.add(Restrictions.eq("user_id",user_id));
+        criteria.add(Restrictions.eq("userId",userId));
         return (TwibbleUser) criteria.uniqueResult();
     }
 

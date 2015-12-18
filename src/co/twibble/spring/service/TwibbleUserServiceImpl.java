@@ -47,8 +47,8 @@ public class TwibbleUserServiceImpl implements TwibbleUserService {
 	    
 	    @Override
 	    @Transactional
-		public TwibbleUser getUserByID(int user_id) {
-	    	return userDAO.getUserByID(user_id);
+		public TwibbleUser getUserByID(int userId) {
+	    	return userDAO.getUserByID(userId);
 		}
 
 }
