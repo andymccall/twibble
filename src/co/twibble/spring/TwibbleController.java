@@ -87,6 +87,17 @@ public class TwibbleController {
 			return "redirect:/users";
 
 		}
+ 	
+ 	@RequestMapping(value = "/users/{userId}/", method = RequestMethod.GET)
+ 	public String showUserForm(Model model, @PathVariable("userId") int userId) {
+
+ 		TwibbleUser user = twibbleUserService.getUserById(userId);
+
+ 		model.addAttribute("user", user);
+
+ 		return "user";
+
+ 	}
     
     @RequestMapping(value = "/users/{userId}/delete", method = RequestMethod.POST)
 	public String deleteUser(@PathVariable("userId") int userId, 

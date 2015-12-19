@@ -31,7 +31,8 @@
     <tbody>
         <c:forEach items="${users}" var="users">
             <tr>
-              <td>${users.userId}</td>
+              <spring:url value="/users/${users.userId}/" var="userUrl" />
+              <td><a href="${userUrl}">${users.userId}</a></td>
               <td>${users.username}</td>
               <td>${users.firstName}</td>
               <td>${users.lastName}</td>
