@@ -16,6 +16,7 @@ public interface TwibbleUserService {
     public void addUser(TwibbleUser twibbleUser);
     public List<TwibbleUser> listUsers();
     public void updateUser(TwibbleUser twibbleUser);
-    public TwibbleUser getUserByID(int userId);
+    public TwibbleUser getUserById(int userId);
+    public void deleteUserById(int userId);
 
 }

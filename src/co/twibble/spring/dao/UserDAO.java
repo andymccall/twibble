@@ -16,6 +16,7 @@ public interface UserDAO {
     public void addUser(TwibbleUser user);
     public List<TwibbleUser> listUsers();
     public void updateUser(TwibbleUser user);
-    public TwibbleUser getUserByID(int user_id);
+    public TwibbleUser getUserById(int userId);
+    public void deleteUserById(int userId);
 
 }

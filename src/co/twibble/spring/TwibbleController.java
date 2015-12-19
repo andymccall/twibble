@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
- 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import co.twibble.spring.model.Twibble;
 import co.twibble.spring.model.TwibbleUser;
 import co.twibble.spring.service.TwibbleService;
@@ -55,5 +57,16 @@ public class TwibbleController {
         model.addAttribute("users", users);
         return "users";
     }
+    
+    @RequestMapping(value = "/users/{userId}/delete", method = RequestMethod.POST)
+	public String deleteUser(@PathVariable("userId") int userId, 
+		final RedirectAttributes redirectAttributes) {
+
+		twibbleUserService.deleteUserById(userId);
+		return "redirect:/users";
+
+	}
+
+    
     
 }
